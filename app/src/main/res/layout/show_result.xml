@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/toolbar">
+
+
+    <TextView
+        android:id="@+id/congratz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Congratulations!"
+        android:textColor="@color/colorText"
+        android:layout_centerInParent="true"
+        android:textSize="35sp" />
+
+    <TextView
+        android:id="@+id/yourgpais"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Your GPA is :"
+        android:textColor="@color/colorText"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/congratz"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/gpa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/yourgpais"
+        android:text="4.97"
+        android:textSize="30sp"
+        android:textColor="@color/colorText" />
+
+
+
+</RelativeLayout>

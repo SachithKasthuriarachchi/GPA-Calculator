@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.sachith.gpacalculator">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_1"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_1_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".department.bme.DisplaySemesterBME" />
+        <activity android:name=".department.ce.DisplaySemesterCivil" />
+        <activity android:name=".department.cpe.DisplaySemesterChemical" />
+        <activity android:name=".department.cse.DisplaySemesterCSE" />
+        <activity android:name=".department.ee.DisplaySemesterTrical" />
+        <activity android:name=".department.entc.DisplaySemesterENTC" />
+        <activity android:name=".department.er.DisplaySemesterEM" />
+        <activity android:name=".department.me.DisplaySemesterMech" />
+        <activity android:name=".department.mse.DisplaySemesterMaterial" />
+        <activity android:name=".department.tlm.DisplaySemesterTLM" />
+        <activity android:name=".impl.DisplayModuleActivityDept" />
+        <activity android:name=".impl.DisplayModuleActivityFreshers" />
+        <activity android:name=".DisplayCalculatorActivity" />
+        <activity android:name=".ShowResult" />
+        <activity android:name=".department.tm.DisplaySemesterTM" />
+    </application>
+
+</manifest>

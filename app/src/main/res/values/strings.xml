@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">My GPA[UOM - Eng]</string>
+    <string name="dept">DEPARTMENTS</string>
+    <string name="modules">MODULES</string>
+    <string name="semesters">SEMESTERS</string>
+    <string name="nextButton">NEXT</string>
+    <string name="dept_BME">Bio-Medical Engineering</string>
+    <string name="dept_CPE">Chemical and Process Engineering</string>
+    <string name="dept_CE">Civil Engineering</string>
+    <string name="dept_CSE">Computer Science and Engineering</string>
+    <string name="dept_ERE">Earth Resource Engineering</string>
+    <string name="dept_EE">Electrical Engineering</string>
+    <string name="dept_ENTCE">Electronic and Telecommunication Engineering</string>
+    <string name="dept_MSE">Materials Science and Engineering</string>
+    <string name="dept_ME">Mechanical Engineering</string>
+    <string name="dept_TM">Textile and Clothing Technology</string>
+    <string name="dept_TLM">Transport and Logistics Management</string>
+    <string name="first_SEM">Fresher</string>
+    <string name="credits">CREDITS</string>
+    <string name="results">RESULTS</string>
+    <string name="calculate">CALCULATE</string>
+    <string name="select">SELECT</string>
+
+    <string name="shortDept_BME">BME</string>
+    <string name="shortDept_CPE">CPE</string>
+    <string name="shortDept_CE">CE</string>
+    <string name="shortDept_CSE">CSE</string>
+    <string name="shortDept_ER">ER</string>
+    <string name="shortDept_EE">EE</string>
+    <string name="shortDept_ENTC">ENTC</string>
+    <string name="shortDept_MSE">MSE</string>
+    <string name="shortDept_ME">ME</string>
+    <string name="shortDept_TM">TM</string>
+    <string name="shortDept_TLM">TLM</string>
+
+    <string name="sem2">SEMESTER 2</string>
+    <string name="sem3">SEMESTER 3</string>
+    <string name="sem4">SEMESTER 4</string>
+    <string name="sem5">SEMESTER 5</string>
+    <string name="sem6">SEMESTER 6</string>
+    <string name="sem7">SEMESTER 7</string>
+    <string name="sem8">SEMESTER 8</string>
+    <string name="a">A+</string>
+    <string name="b">A</string>
+    <string name="c">A-</string>
+    <string name="d">B+</string>
+    <string name="e">B</string>
+    <string name="f">B-</string>
+    <string name="g">C+</string>
+    <string name="h">C</string>
+    <string name="i">C-</string>
+    <string name="j">D</string>
+    <string name="k">I</string>
+    <string name="l">F</string>
+
+    <string-array name="results_ABC">
+        <item>A+</item>
+        <item>A</item>
+        <item>A-</item>
+        <item>B+</item>
+        <item>B</item>
+        <item>B-</item>
+        <item>C+</item>
+        <item>C</item>
+        <item>C-</item>
+        <item>D</item>
+        <item>I</item>
+        <item>F</item>
+    </string-array>
+
+</resources>

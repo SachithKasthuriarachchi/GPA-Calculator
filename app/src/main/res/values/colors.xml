@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#037EF3</color>
+    <color name="colorPrimaryDark">#0067D8</color>
+    <color name="colorAccent">#1919E6</color>
+    <color name="colorButtons">#0076EA</color>
+    <color name="colorBackground">#4596FF</color>
+    <color name="colorText">#FFFFFF</color>
+    <color name="colorSemList">#0076EA</color>
+    <color name="toolbar">#006FE1</color>
+    <color name="checkedCol">#037EF3</color>
+    <color name="semesterCol">#0076EA</color>
+    <color name="calBackground">#FFFFFF</color>
+</resources>
