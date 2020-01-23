@@ -1,24 +1,24 @@
 package com.sachith.gpacalculator;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
-import com.sachith.gpacalculator.department.bme.DisplaySemesterBME;
-import com.sachith.gpacalculator.department.ce.DisplaySemesterCivil;
-import com.sachith.gpacalculator.department.cpe.DisplaySemesterChemical;
-import com.sachith.gpacalculator.department.cse.DisplaySemesterCSE;
-import com.sachith.gpacalculator.department.ee.DisplaySemesterTrical;
-import com.sachith.gpacalculator.department.entc.DisplaySemesterENTC;
-import com.sachith.gpacalculator.department.er.DisplaySemesterEM;
-import com.sachith.gpacalculator.department.me.DisplaySemesterMech;
-import com.sachith.gpacalculator.department.mse.DisplaySemesterMaterial;
-import com.sachith.gpacalculator.department.tlm.DisplaySemesterTLM;
-import com.sachith.gpacalculator.department.tm.DisplaySemesterTM;
-import com.sachith.gpacalculator.impl.DisplayModuleActivityFreshers;
+import com.gargoylesoftware.htmlunit.WebClient;
+import com.gargoylesoftware.htmlunit.html.HtmlInput;
+import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import com.gargoylesoftware.htmlunit.html.HtmlSubmitInput;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -27,188 +27,110 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        CardView cardViewBME = findViewById(R.id.BME);
-        cardViewBME.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), DisplaySemesterBME.class);
-                intent.putExtra("Department", "BME");
-                startActivity(intent);
-            }
-        });
 
-        CardView cardViewCE = findViewById(R.id.CE);
-        cardViewCE.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), DisplaySemesterCivil.class);
-                intent.putExtra("Department", "CE");
-                startActivity(intent);
-            }
-        });
 
-        CardView cardViewCPE = findViewById(R.id.CPE);
-        cardViewCPE.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), DisplaySemesterChemical.class);
-                intent.putExtra("Department", "CPE");
-                startActivity(intent);
-            }
-        });
+        final EditText name = (EditText) findViewById(R.id.editName);
+        final EditText password = (EditText) findViewById(R.id.editPass);
 
-        CardView cardViewCSE = findViewById(R.id.CSE);
-        cardViewCSE.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), DisplaySemesterCSE.class);
-                intent.putExtra("Department", "CSE");
-                startActivity(intent);
-            }
-        });
+        final CardView login = findViewById(R.id.login);
 
-        CardView cardViewEE = findViewById(R.id.EE);
-        cardViewEE.setOnClickListener(new View.OnClickListener() {
+        login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), DisplaySemesterTrical.class);
-                intent.putExtra("Department", "EE");
-                startActivity(intent);
-            }
-        });
+                String n = name.getText().toString();
+                String p = password.getText().toString();
+                String result = null;
+                try {
+                    result = GET();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                System.out.println(result);
 
-        CardView cardViewENTC = findViewById(R.id.ENTC);
-        cardViewENTC.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), DisplaySemesterENTC.class);
-                intent.putExtra("Department", "ENTC");
-                startActivity(intent);
-            }
-        });
 
-        CardView cardViewER = findViewById(R.id.ER);
-        cardViewER.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), DisplaySemesterEM.class);
-                intent.putExtra("Department", "ER");
-                startActivity(intent);
-            }
-        });
+                //WebDriver driver = new AndroidWebDriver()
 
-        CardView cardViewME = findViewById(R.id.ME);
-        cardViewME.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), DisplaySemesterMech.class);
-                intent.putExtra("Department", "ME");
-                startActivity(intent);
-            }
-        });
 
-        CardView cardViewMSE = findViewById(R.id.MSE);
-        cardViewMSE.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), DisplaySemesterMaterial.class);
-                intent.putExtra("Department", "MSE");
-                startActivity(intent);
-            }
-        });
-
-        CardView cardViewTLM = findViewById(R.id.TLM);
-        cardViewTLM.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), DisplaySemesterTLM.class);
-                intent.putExtra("Department", "TLM");
-                startActivity(intent);
-            }
-        });
-
-        CardView cardViewTM = findViewById(R.id.TM);
-        cardViewTM.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), DisplaySemesterTM.class);
-                intent.putExtra("Department", "TM");
-                startActivity(intent);
             }
         });
     }
 
-    public void displayFirstSem(View view) {
 
-        Intent intent = new Intent(this, DisplayModuleActivityFreshers.class);
-        startActivity(intent);
+    private static WebClient LogIn(WebClient webClient) throws Exception {
+
+        //webClient.getOptions().setJavaScriptEnabled(false);
+        HtmlPage currentPage = webClient.getPage("https://lms.mrt.ac.lk/enrolments.php"); //Load page at the STRING address.
+        HtmlInput username = currentPage.getElementByName("LearnOrgUsername"); //Find element called loginuser for username
+        username.setValueAttribute("160290R"); //Set value for username
+        HtmlInput password = currentPage.getElementByName("LearnOrgPassword"); //Find element called loginpassword for password
+        password.setValueAttribute("SN1Math$lifE23"); //Set value for password
+        HtmlSubmitInput submitBtn = currentPage.getElementByName("LearnOrgLogin"); //Find element called Submit to submit form.
+        currentPage = submitBtn.click(); //Click on the button.
+
+        return webClient;
     }
 
-    public void displaySemestersENTC(View view) {
+    private String GET() throws Exception {
 
-        Intent intent = new Intent(this, DisplaySemesterENTC.class);
-        startActivity(intent);
+        WebClient webClient = new WebClient();
+        webClient = LogIn(webClient);
+
+        HtmlPage currentPage = webClient.getPage("https://lms.mrt.ac.lk/enrolments.php");
+        String pageSource = currentPage.asXml();
+
+        Document document = Jsoup.parse(pageSource);
+        System.out.println(document);
+        JSONObject object = new JSONObject();
+        object.put("Semester_1", new JSONArray());
+        object.put("Semester_2", new JSONArray());
+        object.put("Semester_3", new JSONArray());
+        object.put("Semester_4", new JSONArray());
+        object.put("Semester_5", new JSONArray());
+        object.put("Semester_6", new JSONArray());
+        object.put("Semester_7", new JSONArray());
+        object.put("Semester_8", new JSONArray());
+
+        Element table = document.select("tbody").last();
+        Elements row = table.getElementsByTag("tr");
+
+        for (int i = 2; i < row.size(); i++) {
+
+            Elements col = row.eq(i).select("td");
+
+            if (col.size() == 4) {
+                String semester = col.get(0).text();
+                String code = col.get(1).text();
+                String module = col.get(2).text();
+                String credits = col.get(3).text();
+                JSONObject modObject = new JSONObject();
+                modObject.put("name", module);
+                modObject.put("credits", credits);
+
+                JSONObject cObject = new JSONObject();
+                cObject.put(code, modObject);
+
+
+                if (semester.contains("Semester - 1")) {
+                    ((JSONArray) object.get("Semester_1")).put(cObject);
+                } else if (semester.contains("Semester - 2")) {
+                    ((JSONArray) object.get("Semester_2")).put(cObject);
+                } else if (semester.contains("Semester - 3")) {
+                    ((JSONArray) object.get("Semester_3")).put(cObject);
+                } else if (semester.contains("Semester - 4")) {
+                    ((JSONArray) object.get("Semester_4")).put(cObject);
+                } else if (semester.contains("Semester - 5")) {
+                    ((JSONArray) object.get("Semester_5")).put(cObject);
+                } else if (semester.contains("Semester - 6")) {
+                    ((JSONArray) object.get("Semester_6")).put(cObject);
+                } else if (semester.contains("Semester - 7")) {
+                    ((JSONArray) object.get("Semester_7")).put(cObject);
+                } else if (semester.contains("Semester - 8")) {
+                    ((JSONArray) object.get("Semester_8")).put(cObject);
+                }
+                //System.out.println(cObject.toString());
+            }
+        }
+
+        return object.toString();
     }
-
-    public void displaySemestersBME(View view) {
-
-        Intent intent = new Intent(this, DisplaySemesterBME.class);
-        startActivity(intent);
-    }
-
-    public void displaySemestersCE(View view) {
-
-        Intent intent = new Intent(this, DisplaySemesterCivil.class);
-        startActivity(intent);
-    }
-
-    public void displaySemestersChem(View view) {
-
-        Intent intent = new Intent(this, DisplaySemesterChemical.class);
-        startActivity(intent);
-    }
-
-    public void displaySemestersCSE(View view) {
-
-        Intent intent = new Intent(this, DisplaySemesterCSE.class);
-        startActivity(intent);
-    }
-
-    public void displaySemestersEE(View view) {
-
-        Intent intent = new Intent(this, DisplaySemesterTrical.class);
-        startActivity(intent);
-    }
-
-    public void displaySemestersER(View view) {
-
-        Intent intent = new Intent(this, DisplaySemesterEM.class);
-        startActivity(intent);
-    }
-
-    public void displaySemestersMech(View view) {
-
-        Intent intent = new Intent(this, DisplaySemesterMech.class);
-        startActivity(intent);
-    }
-
-    public void displaySemestersMSE(View view) {
-
-        Intent intent = new Intent(this, DisplaySemesterMaterial.class);
-        startActivity(intent);
-    }
-
-    public void displaySemestersTLM(View view) {
-
-        Intent intent = new Intent(this, DisplaySemesterTLM.class);
-        startActivity(intent);
-    }
-
-    public void displaySemestersTM(View view) {
-
-        Intent intent = new Intent(this, DisplaySemesterTM.class);
-        startActivity(intent);
-    }
-
-
 }

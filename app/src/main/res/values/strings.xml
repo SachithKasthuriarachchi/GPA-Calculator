@@ -21,6 +21,11 @@
     <string name="calculate">CALCULATE</string>
     <string name="select">SELECT</string>
 
+    <string name="username">Name</string>
+    <string name="password">Password</string>
+    <string name="login">Log In</string>
+    <string name="welcome">Welcome!</string>
+
     <string name="shortDept_BME">BME</string>
     <string name="shortDept_CPE">CPE</string>
     <string name="shortDept_CE">CE</string>
