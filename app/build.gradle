@@ -40,7 +40,7 @@ dependencies {
     implementation 'org.apache.httpcomponents:httpclient-android:4.3.5.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation files('libs\\htmlunit-2.13.jar')
+    implementation files('libs\\htmlunit-2.32.jar')
 
 
 }
@@ -57,10 +57,3 @@ configurations.all {
     }
 }
 
-android {
-    packagingOptions {
-        exclude 'mozilla/public-suffix-list.txt'
-        exclude 'META-INF/DEPENDENCIES'
-        pickFirst 'org/apache/http/conn/ssl/AllowAllHostnameVerifier'
-    }
-}
