@@ -22,6 +22,7 @@ public class ShowResult extends AppCompatActivity {
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         String myGPA = format.format(bundle.getDouble("GPA"));
+        System.out.println(getIntent().getStringExtra("Index"));
 
         gpa.setText(myGPA);
 

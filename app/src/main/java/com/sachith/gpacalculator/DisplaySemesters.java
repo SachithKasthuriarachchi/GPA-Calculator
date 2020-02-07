@@ -1,16 +1,15 @@
-package com.sachith.gpacalculator.department.tlm;
+package com.sachith.gpacalculator;
 
 import android.os.Bundle;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.sachith.gpacalculator.R;
 import com.sachith.gpacalculator.adapter.SemesterAdapter;
 
 import java.util.ArrayList;
 
-public class DisplaySemesterTLM extends AppCompatActivity {
+public class DisplaySemesters extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstance) {
@@ -20,7 +19,9 @@ public class DisplaySemesterTLM extends AppCompatActivity {
 
         ArrayList<String> semesters = getAllSemesters();
         String department = getIntent().getStringExtra("Department");
-        SemesterAdapter semesterAdapter = new SemesterAdapter(this, semesters, department);
+        String index = getIntent().getStringExtra("Index");
+        //System.out.println(index);
+        SemesterAdapter semesterAdapter = new SemesterAdapter(this, semesters, department, index);
         ListView listView = (ListView) findViewById(R.id.semsterList);
         listView.setAdapter(semesterAdapter);
     }
@@ -28,7 +29,6 @@ public class DisplaySemesterTLM extends AppCompatActivity {
     private ArrayList<String> getAllSemesters() {
 
         ArrayList<String> semesters = new ArrayList<String>();
-        semesters.add("SEMESTER 1");
         semesters.add("SEMESTER 2");
         semesters.add("SEMESTER 3");
         semesters.add("SEMESTER 4");

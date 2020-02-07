@@ -76,6 +76,7 @@ public class DisplayCalculatorActivity extends AppCompatActivity {
                             Bundle bundle = new Bundle();
                             bundle.putDouble("GPA", gpa);
                             intent.putExtras(bundle);
+                            intent.putExtra("Index", getIntent().getStringExtra("Index"));
                             startActivity(intent);
                         }
                     }

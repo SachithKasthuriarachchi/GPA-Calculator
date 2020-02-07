@@ -66,6 +66,7 @@ public class DisplayModuleActivityFreshers extends AppCompatActivity implements 
                 ArrayList<Module> selectedModules = moduleAdapter.getSelectedModules();
                 Intent intent = new Intent(v.getContext(), DisplayCalculatorActivity.class);
                 intent.putParcelableArrayListExtra("Sel_Modules", selectedModules);
+                intent.putExtra("Index", getIntent().getStringExtra("Index"));
                 startActivity(intent);
             }
         });

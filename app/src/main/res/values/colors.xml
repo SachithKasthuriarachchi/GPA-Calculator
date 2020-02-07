@@ -11,4 +11,10 @@
     <color name="checkedCol">#037EF3</color>
     <color name="semesterCol">#0076EA</color>
     <color name="calBackground">#FFFFFF</color>
+    <color name="signinBack">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <color name="signin_background">#D3D3D3</color>
+    <color name="signin_userpass">#E9E9E9</color>
+    <color name="signin_login_button">#71BC78</color>
 </resources>

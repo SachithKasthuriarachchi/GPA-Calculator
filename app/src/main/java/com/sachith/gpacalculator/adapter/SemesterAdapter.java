@@ -18,10 +18,12 @@ import java.util.ArrayList;
 public class SemesterAdapter extends ArrayAdapter<String> {
 
     private String departmentName;
+    private String indexNo;
 
-    public SemesterAdapter(Context context, ArrayList<String> semesters, String department) {
+    public SemesterAdapter(Context context, ArrayList<String> semesters, String department, String indexNo) {
         super(context, 0, semesters);
         this.departmentName = department;
+        this.indexNo = indexNo;
     }
 
     public SemesterAdapter(Context context, ArrayList<String> semesters) {
@@ -46,6 +48,7 @@ public class SemesterAdapter extends ArrayAdapter<String> {
                 Intent intent = new Intent(v.getContext(), DisplayModuleActivityDept.class);
                 intent.putExtra("Department", departmentName);
                 intent.putExtra("Semester", getSemesterName(semName));
+                intent.putExtra("Index", indexNo);
                 v.getContext().startActivity(intent);
             }
         });

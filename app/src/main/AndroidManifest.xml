@@ -19,21 +19,13 @@
                 <action android:name="android.intent.action.VIEW" />
             </intent-filter>
         </activity>
-        <activity android:name=".department.bme.DisplaySemesterBME" />
-        <activity android:name=".department.ce.DisplaySemesterCivil" />
-        <activity android:name=".department.cpe.DisplaySemesterChemical" />
-        <activity android:name=".department.cse.DisplaySemesterCSE" />
-        <activity android:name=".department.ee.DisplaySemesterTrical" />
-        <activity android:name=".department.entc.DisplaySemesterENTC" />
-        <activity android:name=".department.er.DisplaySemesterEM" />
-        <activity android:name=".department.me.DisplaySemesterMech" />
-        <activity android:name=".department.mse.DisplaySemesterMaterial" />
-        <activity android:name=".department.tlm.DisplaySemesterTLM" />
         <activity android:name=".impl.DisplayModuleActivityDept" />
         <activity android:name=".impl.DisplayModuleActivityFreshers" />
         <activity android:name=".DisplayCalculatorActivity" />
         <activity android:name=".ShowResult" />
         <activity android:name=".department.tm.DisplaySemesterTM" />
+        <activity android:name=".DisplayDeptActivity" />
+        <activity android:name=".DisplaySemesters" />
     </application>
 
 </manifest>

@@ -66,6 +66,7 @@ public class DisplayModuleActivityDept extends AppCompatActivity implements Disp
                 if (selectedModules.size()>0) {
 
                     Intent intent = new Intent(v.getContext(), DisplayCalculatorActivity.class);
+                    intent.putExtra("Index", getIntent().getStringExtra("Index"));
                     intent.putParcelableArrayListExtra("Sel_Modules", selectedModules);
                     startActivity(intent);
                 }

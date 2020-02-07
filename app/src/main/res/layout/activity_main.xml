@@ -3,445 +3,87 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
-    android:layout_width="match_parent">
+    android:layout_width="match_parent"
+    android:background="@color/signin_background">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolBar"
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/welcome"
+        android:layout_marginBottom="5dp"
+        android:src="@mipmap/ic_launcher_1_foreground"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/userName"
+        android:layout_marginBottom="20dp"
+        android:text="@string/welcome"
+        android:textSize="35sp"
+        android:textColor="@color/black"
+        android:layout_centerHorizontal="true" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/userName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/toolbar"
-        android:minHeight="?attr/actionBarSize">
+        android:minHeight="?attr/actionBarSize"
+        android:elevation="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        card_view:cardCornerRadius="10dp"
+        card_view:cardBackgroundColor="@color/signin_userpass"
+        android:descendantFocusability="beforeDescendants">
+
+        <EditText
+            android:id="@+id/editName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:focusable="true"
+            android:hint="@string/username"
+            android:background="@null"
+            android:inputType="text" />
+    </androidx.cardview.widget.CardView>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_below="@+id/userName"
+        android:layout_marginTop="20dp"
+        android:elevation="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        card_view:cardCornerRadius="10dp"
+        card_view:cardBackgroundColor="@color/signin_login_button"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/colorText"
-            android:layout_marginStart="20dp"
-            android:text="@string/dept"
-            android:textStyle="bold"/>
-    </androidx.appcompat.widget.Toolbar>
-    <ScrollView
-        android:id="@+id/scrollView"
-        android:layout_below="@+id/toolBar"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorBackground">
+            android:layout_gravity="center"
+            android:text="@string/login"
+            android:textSize="20sp"
+            android:textColor="@color/black" />
 
-        <TableLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:columnCount="2">
+    </androidx.cardview.widget.CardView>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="1">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/BME"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_height="wrap_content"
-                    android:minHeight="?attr/actionBarSize"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:focusable="true"
-                    card_view:cardBackgroundColor="@color/colorSemList"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:onClick="displaySemestersBME"
-                    >
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_gravity="center_vertical"
-                        android:text="@string/dept_BME"
-                        android:textStyle="bold"
-                        android:textAllCaps="true"
-                        android:textColor="@color/colorText" />
-                </androidx.cardview.widget.CardView>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="1">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/CPE"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="1dp"
-                    android:layout_height="wrap_content"
-                    android:minHeight="?attr/actionBarSize"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:focusable="true"
-                    card_view:cardBackgroundColor="@color/colorSemList"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:onClick="displaySemestersChem"
-                    >
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_gravity="center_vertical"
-                        android:text="@string/dept_CPE"
-                        android:textStyle="bold"
-                        android:textAllCaps="true"
-                        android:textColor="@color/colorText" />
-
-
-                </androidx.cardview.widget.CardView>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="1">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/CE"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_height="wrap_content"
-                    android:minHeight="?attr/actionBarSize"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:focusable="true"
-                    card_view:cardBackgroundColor="@color/colorSemList"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:onClick="displaySemestersCE"
-                    >
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_gravity="center_vertical"
-                        android:text="@string/dept_CE"
-                        android:textStyle="bold"
-                        android:textAllCaps="true"
-                        android:textColor="@color/colorText" />
-
-                </androidx.cardview.widget.CardView>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="1">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/CSE"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="1dp"
-                    android:layout_height="wrap_content"
-                    android:minHeight="?attr/actionBarSize"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:focusable="true"
-                    card_view:cardBackgroundColor="@color/colorSemList"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:onClick="displaySemestersCSE"
-                    >
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_gravity="center_vertical"
-                        android:text="@string/dept_CSE"
-                        android:textStyle="bold"
-                        android:textAllCaps="true"
-                        android:textColor="@color/colorText" />
-
-                </androidx.cardview.widget.CardView>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="1">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/ER"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_height="wrap_content"
-                    android:minHeight="?attr/actionBarSize"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:focusable="true"
-                    card_view:cardBackgroundColor="@color/colorSemList"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:onClick="displaySemestersER"
-                    >
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_gravity="center_vertical"
-                        android:text="@string/dept_ERE"
-                        android:textColor="@color/colorText"
-                        android:textStyle="bold"
-                        android:textAllCaps="true" />
-
-                </androidx.cardview.widget.CardView>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="1">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/EE"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="1dp"
-                    android:layout_height="wrap_content"
-                    android:minHeight="?attr/actionBarSize"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:focusable="true"
-                    card_view:cardBackgroundColor="@color/colorSemList"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:onClick="displaySemestersEE"
-                    >
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_gravity="center_vertical"
-                        android:text="@string/dept_EE"
-                        android:textStyle="bold"
-                        android:textAllCaps="true"
-                        android:textColor="@color/colorText" />
-
-                </androidx.cardview.widget.CardView>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="1">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/ENTC"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_height="wrap_content"
-                    android:minHeight="?attr/actionBarSize"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:focusable="true"
-                    card_view:cardBackgroundColor="@color/colorSemList"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:onClick="displaySemestersENTC"
-                    >
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_gravity="center_vertical"
-                        android:text="@string/dept_ENTCE"
-                        android:textStyle="bold"
-                        android:textAllCaps="true"
-                        android:textColor="@color/colorText" />
-
-                </androidx.cardview.widget.CardView>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="1">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/MSE"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="1dp"
-                    android:layout_height="wrap_content"
-                    android:minHeight="?attr/actionBarSize"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:focusable="true"
-                    card_view:cardBackgroundColor="@color/colorSemList"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:onClick="displaySemestersMSE"
-                    >
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_gravity="center_vertical"
-                        android:text="@string/dept_MSE"
-                        android:textStyle="bold"
-                        android:textAllCaps="true"
-                        android:textColor="@color/colorText" />
-
-                </androidx.cardview.widget.CardView>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="1">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/ME"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_height="wrap_content"
-                    android:minHeight="?attr/actionBarSize"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:focusable="true"
-                    card_view:cardBackgroundColor="@color/colorSemList"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:onClick="displaySemestersMech"
-                    >
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_gravity="center_vertical"
-                        android:text="@string/dept_ME"
-                        android:textStyle="bold"
-                        android:textAllCaps="true"
-                        android:textColor="@color/colorText" />
-
-                </androidx.cardview.widget.CardView>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="1">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/TM"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="1dp"
-                    android:layout_height="wrap_content"
-                    android:minHeight="?attr/actionBarSize"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:focusable="true"
-                    card_view:cardBackgroundColor="@color/colorSemList"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:onClick="displaySemestersTM"
-                    >
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_gravity="center_vertical"
-                        android:text="@string/dept_TM"
-                        android:textStyle="bold"
-                        android:textAllCaps="true"
-                        android:textColor="@color/colorText" />
-
-                </androidx.cardview.widget.CardView>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="1">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/TLM"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_height="wrap_content"
-                    android:minHeight="?attr/actionBarSize"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:focusable="true"
-                    card_view:cardBackgroundColor="@color/colorSemList"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:onClick="displaySemestersTLM"
-                    >
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_gravity="center_vertical"
-                        android:text="@string/dept_TLM"
-                        android:textStyle="bold"
-                        android:textAllCaps="true"
-                        android:textColor="@color/colorText" />
-
-                </androidx.cardview.widget.CardView>
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:weightSum="1">
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/firstSem"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-
-                    android:layout_height="wrap_content"
-                    android:minHeight="?attr/actionBarSize"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:onClick="displayFirstSem"
-                    card_view:cardBackgroundColor="@color/colorSemList"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    >
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_gravity="center_vertical"
-                        android:text="@string/first_SEM"
-                        android:textStyle="bold"
-                        android:textAllCaps="true"
-                        android:textColor="@color/colorText" />
-
-                </androidx.cardview.widget.CardView>
-            </TableRow>
-        </TableLayout>
-    </ScrollView>
 </RelativeLayout>
-
-
