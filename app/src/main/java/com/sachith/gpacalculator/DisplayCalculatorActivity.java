@@ -18,6 +18,7 @@ import com.sachith.gpacalculator.model.Result;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class DisplayCalculatorActivity extends AppCompatActivity {
@@ -71,12 +72,14 @@ public class DisplayCalculatorActivity extends AppCompatActivity {
                         if (myResults.size()>0) {
 
                             resultsModAdapter.clearFinalResults();
-                            double gpa = getGPA(myResults);
+                            List<Double> results = getGPA(myResults);
                             Intent intent = new Intent(getApplicationContext(), ShowResult.class);
                             Bundle bundle = new Bundle();
-                            bundle.putDouble("GPA", gpa);
+                            bundle.putDouble("GPA", results.get(0));
+                            bundle.putDouble("Credits", results.get(1));
                             intent.putExtras(bundle);
                             intent.putExtra("Index", getIntent().getStringExtra("Index"));
+                            intent.putExtra("dept", getIntent().getStringExtra("dept"));
                             startActivity(intent);
                         }
                     }
@@ -87,18 +90,21 @@ public class DisplayCalculatorActivity extends AppCompatActivity {
 
     }
 
-    private double getGPA(ArrayList<Result> myResult) {
+    private List<Double> getGPA(ArrayList<Result> myResult) {
 
         double numerator = 0;
         double denominator = 0;
+        List<Double> result = new ArrayList<Double>();
 
         for (Result r : myResult) {
 
             denominator += r.getCredits();
             numerator += (r.getCredits() * r.getResults());
         }
+        result.add(numerator/denominator);
+        result.add(denominator);
 
-        return (numerator / denominator);
+        return result;
     }
 
     private ArrayList<Result> getUniqueResult(ArrayList<Result> myResults) {
