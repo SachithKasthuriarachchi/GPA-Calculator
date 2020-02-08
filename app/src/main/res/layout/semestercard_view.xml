@@ -12,7 +12,7 @@
         android:minHeight="?attr/actionBarSize"
         app:cardBackgroundColor="@color/colorSemList"
         android:elevation="@dimen/cardview_default_elevation"
-        app:cardCornerRadius="@dimen/cardview_default_radius"
+        app:cardCornerRadius="10dp"
         android:clickable="true"
         android:focusable="true"
         android:foreground="?android:attr/selectableItemBackground">

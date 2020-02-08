@@ -50,6 +50,7 @@ android:layout_width="match_parent">
                 card_view:cardBackgroundColor="@color/colorSemList"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:onClick="displaySemesters"
+                card_view:cardCornerRadius="10dp"
                 >
 
                 <TextView
@@ -83,6 +84,7 @@ android:layout_width="match_parent">
                 card_view:cardBackgroundColor="@color/colorSemList"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:onClick="displaySemesters"
+                card_view:cardCornerRadius="10dp"
                 >
 
                 <TextView
@@ -118,6 +120,7 @@ android:layout_width="match_parent">
                 card_view:cardBackgroundColor="@color/colorSemList"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:onClick="displaySemesters"
+                card_view:cardCornerRadius="10dp"
                 >
 
                 <TextView
@@ -152,6 +155,7 @@ android:layout_width="match_parent">
                 card_view:cardBackgroundColor="@color/colorSemList"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:onClick="displaySemesters"
+                card_view:cardCornerRadius="10dp"
                 >
 
                 <TextView
@@ -186,6 +190,7 @@ android:layout_width="match_parent">
                 card_view:cardBackgroundColor="@color/colorSemList"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:onClick="displaySemesters"
+                card_view:cardCornerRadius="10dp"
                 >
 
                 <TextView
@@ -220,6 +225,7 @@ android:layout_width="match_parent">
                 card_view:cardBackgroundColor="@color/colorSemList"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:onClick="displaySemesters"
+                card_view:cardCornerRadius="10dp"
                 >
 
                 <TextView
@@ -254,6 +260,7 @@ android:layout_width="match_parent">
                 card_view:cardBackgroundColor="@color/colorSemList"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:onClick="displaySemesters"
+                card_view:cardCornerRadius="10dp"
                 >
 
                 <TextView
@@ -288,6 +295,7 @@ android:layout_width="match_parent">
                 card_view:cardBackgroundColor="@color/colorSemList"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:onClick="displaySemesters"
+                card_view:cardCornerRadius="10dp"
                 >
 
                 <TextView
@@ -322,6 +330,7 @@ android:layout_width="match_parent">
                 card_view:cardBackgroundColor="@color/colorSemList"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:onClick="displaySemesters"
+                card_view:cardCornerRadius="10dp"
                 >
 
                 <TextView
@@ -356,6 +365,7 @@ android:layout_width="match_parent">
                 card_view:cardBackgroundColor="@color/colorSemList"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:onClick="displaySemesters"
+                card_view:cardCornerRadius="10dp"
                 >
 
                 <TextView
@@ -390,6 +400,7 @@ android:layout_width="match_parent">
                 card_view:cardBackgroundColor="@color/colorSemList"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:onClick="displaySemesters"
+                card_view:cardCornerRadius="10dp"
                 >
 
                 <TextView
@@ -425,6 +436,7 @@ android:layout_width="match_parent">
                 android:onClick="displayFirstSem"
                 card_view:cardBackgroundColor="@color/colorSemList"
                 android:foreground="?android:attr/selectableItemBackground"
+                card_view:cardCornerRadius="10dp"
                 >
 
                 <TextView
