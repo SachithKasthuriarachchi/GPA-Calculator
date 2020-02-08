@@ -5,11 +5,9 @@ import android.content.res.TypedArray;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.ListView;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.sachith.gpacalculator.adapter.ResultsModAdapter;
