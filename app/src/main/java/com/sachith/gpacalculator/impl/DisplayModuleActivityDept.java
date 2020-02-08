@@ -30,7 +30,9 @@ public class DisplayModuleActivityDept extends AppCompatActivity implements Disp
         super.onCreate(savedInstanceState);
         setContentView(R.layout.display_modules);
         Intent intent = getIntent();
-        String tableName = intent.getStringExtra("Department") + intent.getStringExtra("Semester");
+        final String department = intent.getStringExtra("Department");
+        final String semester = intent.getStringExtra("Semester");
+        String tableName = department + semester;
         ArrayList<Module> allModules = getAllModules("MODULES.db", tableName);
         final ModuleAdapter moduleAdapter = new ModuleAdapter(this, allModules);
         ListView listView = (ListView) findViewById(R.id.listViewMod);
@@ -67,6 +69,7 @@ public class DisplayModuleActivityDept extends AppCompatActivity implements Disp
 
                     Intent intent = new Intent(v.getContext(), DisplayCalculatorActivity.class);
                     intent.putExtra("Index", getIntent().getStringExtra("Index"));
+                    intent.putExtra("dept", department + semester);
                     intent.putParcelableArrayListExtra("Sel_Modules", selectedModules);
                     startActivity(intent);
                 }
