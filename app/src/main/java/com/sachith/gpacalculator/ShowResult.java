@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,7 +26,7 @@ public class ShowResult extends AppCompatActivity {
         setContentView(R.layout.show_result);
 
         TextView gpa = findViewById(R.id.gpa);
-        Intent intent = getIntent();
+        final Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         String myGPA = format.format(bundle.getDouble("GPA"));
         double credits = bundle.getDouble("Credits");
@@ -38,6 +40,16 @@ public class ShowResult extends AppCompatActivity {
                 credits);
 
         gpa.setText(myGPA);
+
+        RelativeLayout relativeLayout = findViewById(R.id.showResults);
+        relativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(v.getContext(), DashBoardActivity.class);
+                intent1.putExtra("Index", intent.getStringExtra("Index"));
+                startActivity(intent1);
+            }
+        });
 
     }
 
