@@ -22,10 +22,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String index = name.getText().toString();
-                Intent intent = new Intent(v.getContext(), DisplayDeptActivity.class);
-                intent.putExtra("Index", index);
-                startActivity(intent);
-
+                if (!index.trim().equals("")) {
+                    Intent intent = new Intent(v.getContext(), DisplayDeptActivity.class);
+                    intent.putExtra("Index", index.toUpperCase());
+                    startActivity(intent);
+                }
             }
         });
     }
