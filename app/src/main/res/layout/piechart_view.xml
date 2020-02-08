@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="75dp"
+    app:cardBackgroundColor="@color/colorSemList"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="@dimen/cardview_default_elevation">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <lecho.lib.hellocharts.view.PieChartView
+            android:id="@+id/chart"
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"/>
+
+        <TextView
+            android:id="@+id/semester_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/chart"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/semester"
+            android:textColor="@color/colorText"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/semValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/semester_name"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp" />
+
+        <TextView
+            android:id="@+id/credits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/chart"
+            android:layout_below="@+id/semester_name"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/credits"
+            android:textColor="@color/colorText"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/creditsVal"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/credits"
+            android:layout_below="@+id/semValue"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/gpaVal"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="5dp" />
+
+        <TextView
+            android:id="@+id/gpa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/gpaVal"
+            android:layout_marginEnd="5dp"
+            android:text="@string/gpa"
+            android:textColor="@color/colorText"
+            android:textStyle="bold" />
+
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

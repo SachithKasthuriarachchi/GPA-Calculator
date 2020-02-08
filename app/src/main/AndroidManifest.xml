@@ -23,9 +23,9 @@
         <activity android:name=".impl.DisplayModuleActivityFreshers" />
         <activity android:name=".DisplayCalculatorActivity" />
         <activity android:name=".ShowResult" />
-        <activity android:name=".department.tm.DisplaySemesterTM" />
         <activity android:name=".DisplayDeptActivity" />
         <activity android:name=".DisplaySemesters" />
+        <activity android:name=".DashBoardActivity" />
     </application>
 
 </manifest>

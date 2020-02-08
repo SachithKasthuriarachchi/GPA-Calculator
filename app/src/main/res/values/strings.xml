@@ -3,6 +3,8 @@
     <string name="dept">DEPARTMENTS</string>
     <string name="modules">MODULES</string>
     <string name="semesters">SEMESTERS</string>
+    <string name="semester">SEMESTER</string>
+    <string name="gpa">GPA</string>
     <string name="nextButton">NEXT</string>
     <string name="dept_BME">Bio-Medical Engineering</string>
     <string name="dept_CPE">Chemical and Process Engineering</string>
@@ -18,6 +20,7 @@
     <string name="first_SEM">Fresher</string>
     <string name="credits">CREDITS</string>
     <string name="results">RESULTS</string>
+    <string name="dashboard">DASHBOARD</string>
     <string name="calculate">CALCULATE</string>
     <string name="select">SELECT</string>
 
