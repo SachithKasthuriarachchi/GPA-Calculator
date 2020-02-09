@@ -1,6 +1,8 @@
 package com.sachith.gpacalculator;
 
 import android.content.Intent;
+import android.content.res.TypedArray;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 
@@ -142,6 +144,20 @@ public class DisplayDeptActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), DisplayModuleActivityFreshers.class);
+                intent.putExtra("Index", getIntent().getStringExtra("Index"));
+                startActivity(intent);
+            }
+        });
+
+        CardView cardViewDashBoard = findViewById(R.id.dashClick);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            TypedArray selectableItemBG = this.obtainStyledAttributes(new int[]{android.R.attr.selectableItemBackground});
+            cardViewDashBoard.setForeground(selectableItemBG.getDrawable(0));
+        }
+        cardViewDashBoard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), DashBoardActivity.class);
                 intent.putExtra("Index", getIntent().getStringExtra("Index"));
                 startActivity(intent);
             }
