@@ -164,6 +164,13 @@ public class DisplayDeptActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     public void displayFirstSem(View view) {
 
         Intent intent = new Intent(this, DisplayModuleActivityFreshers.class);

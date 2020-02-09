@@ -65,6 +65,7 @@ public class DashBoardActivity extends AppCompatActivity {
         Intent intent = new Intent(this, DisplayDeptActivity.class);
         intent.putExtra("Index", getIntent().getStringExtra("Index"));
         startActivity(intent);
+        finish();
     }
 
     /**
