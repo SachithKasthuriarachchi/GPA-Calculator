@@ -67,7 +67,7 @@ public class DisplayCalculatorActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         ArrayList<Result> myResults = getUniqueResult(resultsModAdapter.getFinalResults());
 
-                        if (myResults.size()>0) {
+                        if (myResults.size() > 0) {
 
                             resultsModAdapter.clearFinalResults();
                             List<Double> results = getGPA(myResults);
@@ -83,9 +83,7 @@ public class DisplayCalculatorActivity extends AppCompatActivity {
                     }
                 });
             }
-
         }
-
     }
 
     private List<Double> getGPA(ArrayList<Result> myResult) {
@@ -99,7 +97,7 @@ public class DisplayCalculatorActivity extends AppCompatActivity {
             denominator += r.getCredits();
             numerator += (r.getCredits() * r.getResults());
         }
-        result.add(numerator/denominator);
+        result.add(numerator / denominator);
         result.add(denominator);
 
         return result;

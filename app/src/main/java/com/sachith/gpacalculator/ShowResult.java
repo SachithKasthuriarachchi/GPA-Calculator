@@ -32,10 +32,7 @@ public class ShowResult extends AppCompatActivity {
         double credits = bundle.getDouble("Credits");
         String semDept = intent.getStringExtra("dept");
         int semester = Integer.parseInt(semDept.substring(semDept.length() - 1));
-        System.out.println(myGPA);
-        System.out.println(credits);
-        System.out.println(semDept);
-        System.out.println(semester);
+
         updateDB(intent.getStringExtra("Index"), semester, Double.parseDouble(myGPA),
                 credits);
 
@@ -75,7 +72,7 @@ public class ShowResult extends AppCompatActivity {
                 null
         );
         List<Integer> semIDs = new ArrayList<Integer>();
-        while(cursor.moveToNext()) {
+        while (cursor.moveToNext()) {
             int itemId = cursor.getInt(
                     cursor.getColumnIndexOrThrow(UserReaderDB.UserEntry.COLUMN_NAME_SEMESTER));
             semIDs.add(itemId);
@@ -93,7 +90,7 @@ public class ShowResult extends AppCompatActivity {
 
         if (searchForQuery(index, semester, dbHelper)) {
 
-            ContentValues values =new ContentValues();
+            ContentValues values = new ContentValues();
             values.put(UserReaderDB.UserEntry.COLUMN_NAME_CREDITS, credits);
             values.put(UserReaderDB.UserEntry.COLUMN_NAME_GPA, gpa);
 
@@ -108,7 +105,7 @@ public class ShowResult extends AppCompatActivity {
             );
         } else {
 
-            ContentValues values =new ContentValues();
+            ContentValues values = new ContentValues();
             values.put(UserReaderDB.UserEntry.COLUMN_NAME_INDEX, index);
             values.put(UserReaderDB.UserEntry.COLUMN_NAME_CREDITS, credits);
             values.put(UserReaderDB.UserEntry.COLUMN_NAME_GPA, gpa);

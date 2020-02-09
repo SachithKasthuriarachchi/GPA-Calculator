@@ -4,7 +4,8 @@ import android.provider.BaseColumns;
 
 public final class UserReaderDB {
 
-    private UserReaderDB() {}
+    private UserReaderDB() {
+    }
 
     public static class UserEntry implements BaseColumns {
 

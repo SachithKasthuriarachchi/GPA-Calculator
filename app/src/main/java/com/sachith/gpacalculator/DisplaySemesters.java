@@ -22,7 +22,7 @@ public class DisplaySemesters extends AppCompatActivity {
         String index = getIntent().getStringExtra("Index");
         //System.out.println(index);
         SemesterAdapter semesterAdapter = new SemesterAdapter(this, semesters, department, index);
-        ListView listView = (ListView) findViewById(R.id.semsterList);
+        ListView listView = findViewById(R.id.semsterList);
         listView.setAdapter(semesterAdapter);
     }
 

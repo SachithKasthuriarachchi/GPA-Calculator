@@ -24,6 +24,7 @@ public class UserDBHelper extends SQLiteOpenHelper {
     public UserDBHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_CREATE_ENTRIES);
