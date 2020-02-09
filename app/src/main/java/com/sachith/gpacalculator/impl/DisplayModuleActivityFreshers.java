@@ -65,6 +65,7 @@ public class DisplayModuleActivityFreshers extends AppCompatActivity implements 
                 Intent intent = new Intent(v.getContext(), DisplayCalculatorActivity.class);
                 intent.putParcelableArrayListExtra("Sel_Modules", selectedModules);
                 intent.putExtra("Index", getIntent().getStringExtra("Index"));
+                intent.putExtra("dept", "SEMESTER_1");
                 startActivity(intent);
             }
         });
