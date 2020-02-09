@@ -33,7 +33,7 @@ public class DisplayModuleActivityDept extends AppCompatActivity implements Disp
         String tableName = department + semester;
         ArrayList<Module> allModules = getAllModules("MODULES.db", tableName);
         final ModuleAdapter moduleAdapter = new ModuleAdapter(this, allModules);
-        ListView listView = (ListView) findViewById(R.id.listViewMod);
+        ListView listView = findViewById(R.id.listViewMod);
 
         /**
          * Adding the "NEXT" button to module pages
@@ -63,7 +63,7 @@ public class DisplayModuleActivityDept extends AppCompatActivity implements Disp
             public void onClick(View v) {
                 ArrayList<Module> selectedModules = moduleAdapter.getSelectedModules();
 
-                if (selectedModules.size()>0) {
+                if (selectedModules.size() > 0) {
 
                     Intent intent = new Intent(v.getContext(), DisplayCalculatorActivity.class);
                     intent.putExtra("Index", getIntent().getStringExtra("Index"));

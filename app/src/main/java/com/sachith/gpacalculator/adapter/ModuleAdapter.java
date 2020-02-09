@@ -31,6 +31,7 @@ public class ModuleAdapter extends ArrayAdapter<Module> {
 
         CheckBox modName = (CheckBox) convertView.findViewById(R.id.checkBoxMod);
         modName.setText(module.getName());
+        modName.setTextColor(getContext().getResources().getColor(R.color.colorTextBright));
 
         modName.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override

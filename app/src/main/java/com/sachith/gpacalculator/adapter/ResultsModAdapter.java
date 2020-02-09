@@ -18,6 +18,10 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * This represents the results selection radio buttons in calculator_card.xml
+ */
+
 public class ResultsModAdapter extends ArrayAdapter<Module> {
 
     private ArrayList<Result> finalResults = new ArrayList<Result>();
