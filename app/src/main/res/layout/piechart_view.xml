@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/piechartCard"
     android:layout_width="match_parent"
     android:layout_height="75dp"
+    android:clickable="true"
+    android:focusable="true"
     app:cardBackgroundColor="@color/colorSemList"
     app:cardCornerRadius="5dp"
     app:cardElevation="@dimen/cardview_default_elevation">
@@ -25,7 +28,7 @@
             android:layout_marginStart="5dp"
             android:layout_marginTop="10dp"
             android:text="@string/semester"
-            android:textColor="@color/colorText"
+            android:textColor="@color/colorTextBright"
             android:textStyle="bold"/>
 
         <TextView
@@ -34,7 +37,8 @@
             android:layout_height="wrap_content"
             android:layout_toEndOf="@+id/semester_name"
             android:layout_marginTop="10dp"
-            android:layout_marginStart="5dp" />
+            android:layout_marginStart="5dp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/credits"
@@ -45,7 +49,7 @@
             android:layout_marginStart="5dp"
             android:layout_marginTop="10dp"
             android:text="@string/credits"
-            android:textColor="@color/colorText"
+            android:textColor="@color/colorTextBright"
             android:textStyle="bold"/>
 
         <TextView
@@ -55,7 +59,8 @@
             android:layout_toEndOf="@+id/credits"
             android:layout_below="@+id/semValue"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/gpaVal"
@@ -63,7 +68,8 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginEnd="5dp" />
+            android:layout_marginEnd="5dp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/gpa"
@@ -73,7 +79,7 @@
             android:layout_toStartOf="@+id/gpaVal"
             android:layout_marginEnd="5dp"
             android:text="@string/gpa"
-            android:textColor="@color/colorText"
+            android:textColor="@color/colorTextBright"
             android:textStyle="bold" />
 
 

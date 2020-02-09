@@ -21,17 +21,18 @@
             android:textStyle="bold"/>
     </androidx.appcompat.widget.Toolbar>
 
+
     <ListView
         android:id="@+id/listViewDash"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolBar"
-        android:scrollbars="vertical"
         android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:background="@color/colorBackground"
-        />
+        android:scrollbars="vertical" />
+
 
 </RelativeLayout>
