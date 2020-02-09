@@ -5,7 +5,8 @@
     <color name="colorAccent">#1919E6</color>
     <color name="colorButtons">#0076EA</color>
     <color name="colorBackground">#FFE4E1</color>
-    <color name="colorText">#FFFFFF</color>
+    <color name="colorText">#E4EAEC</color>
+    <color name="colorTextBright">#FFFFFF</color>
     <color name="colorSemList">#EF8891</color>
     <color name="toolbar">#3F828F</color>
     <color name="checkedCol">#EF8891</color>
