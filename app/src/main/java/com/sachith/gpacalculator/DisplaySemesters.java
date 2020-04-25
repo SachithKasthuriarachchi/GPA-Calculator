@@ -1,5 +1,6 @@
 package com.sachith.gpacalculator;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 
@@ -20,10 +21,16 @@ public class DisplaySemesters extends AppCompatActivity {
         ArrayList<String> semesters = getAllSemesters();
         String department = getIntent().getStringExtra("Department");
         String index = getIntent().getStringExtra("Index");
-        //System.out.println(index);
         SemesterAdapter semesterAdapter = new SemesterAdapter(this, semesters, department, index);
         ListView listView = findViewById(R.id.semsterList);
         listView.setAdapter(semesterAdapter);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, DisplayDeptActivity.class);
+        intent.putExtra("Index", getIntent().getStringExtra("Index"));
+        startActivity(intent);
     }
 
     private ArrayList<String> getAllSemesters() {
