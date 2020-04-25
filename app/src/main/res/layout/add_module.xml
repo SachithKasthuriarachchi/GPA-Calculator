@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/addModuleView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/toolbar"
+        android:minHeight="?attr/actionBarSize">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/add_module"
+            android:textColor="@color/colorText"
+            android:textStyle="bold" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/moduleCode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolBar"
+        android:minHeight="?attr/actionBarSize"
+        android:elevation="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        card_view:cardCornerRadius="10dp"
+        card_view:cardBackgroundColor="@color/signin_userpass"
+        android:descendantFocusability="beforeDescendants">
+
+        <EditText
+            android:id="@+id/editModCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:focusable="true"
+            android:hint="@string/module_code"
+            android:background="@null"
+            android:inputType="text" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/moduleName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/moduleCode"
+        android:minHeight="?attr/actionBarSize"
+        android:elevation="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        card_view:cardCornerRadius="10dp"
+        card_view:cardBackgroundColor="@color/signin_userpass"
+        android:descendantFocusability="beforeDescendants">
+
+        <EditText
+            android:id="@+id/editModName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:focusable="true"
+            android:hint="@string/module_name"
+            android:background="@null"
+            android:inputType="text" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/moduleCredit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/moduleName"
+        android:minHeight="?attr/actionBarSize"
+        android:elevation="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        card_view:cardCornerRadius="10dp"
+        card_view:cardBackgroundColor="@color/signin_userpass"
+        android:descendantFocusability="beforeDescendants">
+
+        <EditText
+            android:id="@+id/editModCredit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center"
+            android:focusable="true"
+            android:hint="@string/credits_camel"
+            android:background="@null"
+            android:inputType="text" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/done"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_below="@+id/moduleCredit"
+        android:layout_marginTop="20dp"
+        android:elevation="10dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        card_view:cardCornerRadius="10dp"
+        card_view:cardBackgroundColor="@color/signin_login_button"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/done"
+            android:textSize="20sp"
+            android:textColor="@color/black" />
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</RelativeLayout>

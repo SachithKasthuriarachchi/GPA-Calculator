@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/moduleView"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
@@ -13,13 +13,44 @@
         android:background="@color/toolbar"
         android:minHeight="?attr/actionBarSize">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/colorText"
-            android:layout_marginStart="20dp"
-            android:text="@string/modules"
-            android:textStyle="bold"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/topic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:textColor="@color/colorText"
+                android:text="@string/modules"
+                android:textStyle="bold"/>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/addMod"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="20dp"
+                app:cardBackgroundColor="@color/toolbar"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:textColor="@color/colorText"
+                    android:textStyle="bold"
+                    android:text="@string/add" />
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
     </androidx.appcompat.widget.Toolbar>
 
     <ListView

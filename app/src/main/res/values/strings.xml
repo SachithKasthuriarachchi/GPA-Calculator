@@ -60,6 +60,12 @@
     <string name="j">D</string>
     <string name="k">I</string>
     <string name="l">F</string>
+    <string name="add">ADD</string>
+    <string name="add_module">ADD MODULE</string>
+    <string name="module_name">Module Name</string>
+    <string name="module_code">Module Code</string>
+    <string name="credits_camel">Credits</string>
+    <string name="done">Done</string>
 
     <string-array name="results_ABC">
         <item>A+</item>
