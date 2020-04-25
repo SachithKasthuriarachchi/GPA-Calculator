@@ -94,8 +94,10 @@ public class ShowResult extends AppCompatActivity {
             values.put(UserReaderDB.UserEntry.COLUMN_NAME_CREDITS, credits);
             values.put(UserReaderDB.UserEntry.COLUMN_NAME_GPA, gpa);
 
-            String selection = UserReaderDB.UserEntry.COLUMN_NAME_SEMESTER + " LIKE ?";
-            String[] selectionArgs = {String.valueOf(semester)};
+            String selection = UserReaderDB.UserEntry.COLUMN_NAME_SEMESTER + " LIKE ? AND " +
+                    UserReaderDB.UserEntry.COLUMN_NAME_INDEX + " LIKE ?";
+
+            String[] selectionArgs = {String.valueOf(semester), index};
 
             database.update(
                     UserReaderDB.UserEntry.TABLE_NAME,
