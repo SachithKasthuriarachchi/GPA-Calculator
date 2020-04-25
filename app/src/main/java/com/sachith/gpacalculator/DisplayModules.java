@@ -6,5 +6,5 @@ import java.util.ArrayList;
 
 public interface DisplayModules {
 
-    ArrayList<Module> getAllModules(String dbName, String tableName);
+    ArrayList<Module> getAllModules(String dbName, String tableName, int semester);
 }
