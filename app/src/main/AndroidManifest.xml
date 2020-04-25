@@ -26,6 +26,7 @@
         <activity android:name=".DisplayDeptActivity" />
         <activity android:name=".DisplaySemesters" />
         <activity android:name=".DashBoardActivity" />
+        <activity android:name=".AddModuleActivity" />
     </application>
 
 </manifest>
