@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    signingConfigs {
+    /*signingConfigs {
         debug {
             storeFile file('C:\\Users\\Sachith Nilmantha\\GPA\\app.jks')
             storePassword 'sachith'
@@ -14,7 +14,7 @@ android {
             keyAlias = 'key0'
             keyPassword 'sachith'
         }
-    }
+    }*/
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
